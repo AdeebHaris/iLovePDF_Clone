@@ -1,46 +1,72 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Button } from 'react-bootstrap';
-import './Header.css'
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { Button } from "react-bootstrap";
+import "./Header.css";
 function Header() {
   return (
     <>
     
-    <Navbar bg="light" data-bs-theme="light" className='shadow' style={{height:'60px'}}>
-      <Link to={'/'}>
-    <img src="https://www.ilovepdf.com/img/ilovepdf.svg" height='30px' className='ms-4 ' alt="iLovePDF Logo"/>
-      
-      </Link>
-        <Container>
-          <Nav className="me-auto ms-4">
-            <Nav.Link >
-                <Link to={'/merge'} style={{textDecoration:'none',color:'black' , fontSize:'13px',fontWeight:'bold'}} className='nav-link '>
+      <Navbar
+        bg="light"
+        data-bs-theme="light"
+        className="shadow mb-4 ps-4"
+        style={{ height: "auto" }}
+        expand="lg"
+      >
+        <Container fluid>
+          <Navbar.Brand as={Link} to="/">
+            <img
+              src="https://www.ilovepdf.com/img/ilovepdf.svg"
+              height="30px"
+              alt="iLovePDF Logo"
+            />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link
+                as={Link}
+                to="/merge"
+                style={{ fontSize: "13px", fontWeight: "bold" }}
+                className="px-5"
+              >
                 MERGE PDF
-                </Link>
-                </Nav.Link>
-            <Nav.Link >
-                <Link to={'/split'} style={{textDecoration:'none',color:'black' , fontSize:'13px',fontWeight:'bold'}} className='nav-link ms-3'>
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/split"
+                style={{ fontSize: "13px", fontWeight: "bold" }}
+                className="px-5"
+
+              >
                 SPLIT PDF
-                </Link>
-                </Nav.Link>
-                <Nav.Link >
-                <Link to={'/compress'} style={{textDecoration:'none',color:'black' , fontSize:'13px',fontWeight:'bold'}} className='nav-link ms-3'v>
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/compress"
+                style={{ fontSize: "13px", fontWeight: "bold" }}
+                className="px-5"
+
+              >
                 COMPRESS PDF
-                </Link>
-                </Nav.Link>
-                <NavDropdown title="CONVERT PDF" id="basic-nav-dropdown" style={{fontSize:'13px',marginTop:'8px',color:'black',fontWeight:'bold'}} className='nav-dropdown ms-3'>
-                <Navbar.Brand href="#home" className=' ms-4 text-secondary' style={{fontSize:'13px'}}>CONVERT TO PDF</Navbar.Brand>
-    
-                    <div className='d-flex justify-content-evenly align-items-center ms-2 mt-3'>
-    
-                    <svg
+              </Nav.Link>
+              <NavDropdown
+                title="CONVERT PDF"
+                id="basic-nav-dropdown"
+                style={{ fontSize: "13px", fontWeight: "bold" }}
+                className="px-5"
+
+              >
+                <div className="d-flex">
+                <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="22"
+            width="20"
+            height="20"
             viewBox="0 0 50 50"
+            className="ms-2"
           >
             <path
               d="M17.676 34.344h9.55c2.477 0 3.375-.258 4.28-.742a5.04 5.04 0 0 0 2.098-2.102c.484-.902.742-1.8.742-4.277v-9.547H44.82c1.8 0 2.453.188 3.113.54s1.176.87 1.527 1.527.54 1.31.54 3.113V44.82c0 1.8-.187 2.453-.54 3.113a3.69 3.69 0 0 1-1.527 1.527c-.66.352-1.312.54-3.113.54H22.855c-1.8 0-2.453-.187-3.113-.54s-1.172-.87-1.527-1.527-.54-1.312-.54-3.113zm0 0"
@@ -61,15 +87,22 @@ function Header() {
                 fill="rgb(100%,100%,100%)"
               ></path>
             </g>
-          </svg >
-                    <NavDropdown.Item className='ms-2'style={{fontSize:'13px'}}>JPG to PDF</NavDropdown.Item>
-                    </div>
-                    <div className='d-flex justify-content-evenly align-items-center ms-'>
-                    <svg className='ms-2'
+          </svg>
+                  <NavDropdown.Item
+                    as={Link}
+                    to="/convert/jpg-to-pdf"
+                    style={{ fontSize: "13px" }}
+                  >
+                    JPG to PDF
+                  </NavDropdown.Item>
+                </div>
+                <div className="d-flex">
+                <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
             height="20"
             viewBox="0 0 50 50"
+            className="ms-2"
           >
             <path
               d="M17.676 34.344h9.55c2.477 0 3.375-.258 4.28-.742a5.04 5.04 0 0 0 2.098-2.102c.484-.902.742-1.8.742-4.277v-9.547H44.82c1.8 0 2.453.188 3.113.54s1.176.87 1.527 1.527.54 1.31.54 3.113V44.82c0 1.8-.187 2.453-.54 3.113a3.69 3.69 0 0 1-1.527 1.527c-.66.352-1.312.54-3.113.54H22.855c-1.8 0-2.453-.187-3.113-.54s-1.172-.87-1.527-1.527-.54-1.312-.54-3.113zm0 0"
@@ -90,50 +123,67 @@ function Header() {
               fill="rgb(16.078431%,34.117647%,58.431373%)"
             ></path>
           </svg>
-                    <NavDropdown.Item href="#action/3.1" style={{fontSize:'13px'}} className='ms-2'>WORD TO PDF</NavDropdown.Item>
-                    </div>
-                    <div className='d-flex justify-content-evenly align-items-center ms-2'>
-                    <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 50 50"
-          >
-            <path
-              d="M17.676 34.344h9.55c2.476 0 3.375-.258 4.28-.742a5.04 5.04 0 0 0 2.097-2.102c.495-.902.743-1.8.743-4.277v-9.547H44.82c1.8 0 2.453.187 3.114.54.656.355 1.175.87 1.527 1.527s.54 1.31.54 3.113V44.82c0 1.8-.187 2.453-.54 3.114-.35.656-.87 1.175-1.526 1.527S46.62 50 44.82 50H22.855c-1.8 0-2.453-.187-3.113-.54s-1.172-.87-1.527-1.526-.54-1.312-.54-3.113zm0 0"
-              fill-rule="evenodd"
-              fill="rgb(100%,46.27451%,31.764706%)"
-            ></path>
-            <path
-              d="M43.94 37.137c0-.477-.393-.864-.88-.864s-.884.387-.884.864v3.843l-5.146-5.046c-.346-.34-.9-.34-1.25 0-.163.16-.257.38-.257.61a.86.86 0 0 0 .258.613l5.145 5.05h-3.914c-.49 0-.882.387-.882.867s.393.867.882.867H43.063c.113-.002.227-.022.335-.07.215-.085.387-.253.477-.464a.75.75 0 0 0 .065-.332l.005-5.934zm0 0"
-              fill="rgb(100%,100%,100%)"
-            ></path>
-            <g fill-rule="evenodd">
-              <path
-                d="M27.145 32.324H5.18c-1.8 0-2.453-.187-3.113-.543S.89 30.914.54 30.254 0 28.95 0 27.145V5.18c0-1.8.188-2.453.54-3.113A3.69 3.69 0 0 1 2.066.539C2.727.188 3.38 0 5.18 0h21.965c1.8 0 2.453.188 3.113.54s1.172.87 1.527 1.527.54 1.313.54 3.113v21.965c0 1.8-.187 2.453-.54 3.113s-.87 1.176-1.527 1.527-1.312.54-3.113.54zm0 0"
-                fill="rgb(95.294118%,85.098039%,80%)"
-              ></path>
-              <path
-                d="M19.367 17.156c-1.086.898-2.54 1.348-4.36 1.348H13.39V23.5H10V9h5.313C19.102 9 21 10.54 21 13.62c0 1.453-.543 2.637-1.633 3.535zM14.82 11.5H13.5V16h1.32c1.785 0 2.68-.758 2.68-2.273 0-1.484-.89-2.227-2.68-2.227zm0 0"
-                fill="rgb(81.568627%,27.058824%,14.901961%)"
-              ></path>
-            </g>
-          </svg>
-                    <NavDropdown.Item href="#action/3.1" className='ms-2' style={{fontSize:'13px'}}>Powerpoint to PDF</NavDropdown.Item>
-                    </div>
-            </NavDropdown>
-          </Nav>
+                  <NavDropdown.Item
+                    as={Link}
+                    to="/convert/word-to-pdf"
+                    style={{ fontSize: "13px" }}
+                  >
+                    WORD TO PDF
+                  </NavDropdown.Item>
+                </div>
+                <div className="d-flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 50 50"
+                    className="ms-2"
+                  >
+                    <path
+                      d="M32.324 15.656h-9.55c-2.477 0-3.375.258-4.28.742a5.06 5.06 0 0 0-2.098 2.102c-.484.902-.742 1.8-.742 4.277v9.55H5.18c-1.8 0-2.453-.187-3.113-.54a3.69 3.69 0 0 1-1.527-1.527C.188 29.598 0 28.945 0 27.145V5.18c0-1.8.188-2.453.54-3.113A3.69 3.69 0 0 1 2.066.539C2.727.188 3.38 0 5.18 0h21.965c1.8 0 2.453.188 3.113.54a3.69 3.69 0 0 1 1.527 1.527c.352.66.54 1.313.54 3.113zm0 0"
+                      fill-rule="evenodd"
+                      fill="rgb(95.294118%,85.098039%,80%)"
+                    ></path>
+                    <path
+                      d="M14.477 7.52c0-.477-.395-.863-.883-.863s-.883.387-.883.863v3.844L7.566 6.316a.89.89 0 0 0-1.246 0c-.168.16-.258.38-.258.61s.1.453.258.613l5.145 5.05H7.55c-.488 0-.883.387-.883.867s.395.863.883.863h6.047a.85.85 0 0 0 .34-.066c.215-.086.387-.254.477-.47.05-.102.066-.215.066-.328l.004-5.934zm0 0"
+                      fill="rgb(81.568627%,27.058824%,14.901961%)"
+                    ></path>
+                    <g fill-rule="evenodd">
+                      <path
+                        d="M22.855 17.676H44.82c1.8 0 2.453.188 3.113.543.648.344 1.184.875 1.527 1.527.352.656.54 1.31.54 3.11V44.82c0 1.8-.187 2.453-.54 3.113a3.69 3.69 0 0 1-1.527 1.527c-.66.352-1.312.54-3.113.54H22.855c-1.8 0-2.453-.187-3.113-.54-.648-.344-1.18-.88-1.527-1.527-.352-.66-.54-1.312-.54-3.113V22.855c0-1.8.188-2.453.54-3.113.348-.648.88-1.18 1.527-1.527.66-.352 1.313-.54 3.113-.54zm0 0"
+                        fill="rgb(100%,46.27451%,31.764706%)"
+                      ></path>
+                      <path
+                        d="M38.367 34.648C37.28 35.55 35.828 36 34.008 36H32.39v5H29V26.5h5.313c3.79 0 5.688 1.54 5.688 4.62 0 1.453-.543 2.633-1.633 3.535zM33.82 29H32.5v4.5h1.32c1.785 0 2.68-.758 2.68-2.273 0-1.484-.89-2.227-2.68-2.227zm0 0"
+                        fill="rgb(100%,100%,100%)"
+                      ></path>
+                    </g>
+                  </svg>
+                  <NavDropdown.Item
+                  as={Link}
+                  to="/convert/ppt-to-pdf"
+                  style={{ fontSize: "13px" }}
+                >
+                  Powerpoint to PDF
+                </NavDropdown.Item>
+                </div>
+                
+              </NavDropdown>
+            </Nav>
+            <div className="d-flex flex-row-reverse align-items-center">
+            <Link to="/signup">
+              <Button className="btn btn-danger">SignUp</Button>
+            </Link>
+            <Link to="/login" className="login me-3">
+              Login
+            </Link>
+          </div>
+          </Navbar.Collapse>
+          
         </Container>
-        <div className='d-flex flex-row-reverse align-items-center me-2' >
-       <Link to={'/signup'}><Button className='button btn btn-danger'>SignUp</Button></Link> 
-        <Link to={'/login'}  className='login me-3'>Login</Link>
-        </div>
-        
       </Navbar>
-      <br />
-     
     </>
-  )
+  );
 }
 
-export default Header
+export default Header;

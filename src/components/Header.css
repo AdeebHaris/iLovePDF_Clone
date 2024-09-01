@@ -35,5 +35,7 @@
 .nav-dropdown .dropdown-menu {
     min-width: 200px; 
 }
-
+.navbar {
+    z-index: 1000; /* or another high value */
+  }
   
