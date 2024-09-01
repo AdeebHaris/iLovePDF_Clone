@@ -1,0 +1,39 @@
+
+.login{
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+}
+.button:hover{
+    background-color: rgb(170, 37, 37);
+}
+.nav-dropdown .dropdown-menu {
+    display: none;
+}
+.nav-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0;
+    display: none;
+}
+
+.nav-dropdown .dropdown-menu {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+}
+
+
+.nav-dropdown .dropdown-menu {
+    min-width: 200px; 
+}
+
+  

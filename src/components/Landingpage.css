@@ -1,0 +1,36 @@
+svg{
+    transition: transform 0.01s ease;
+    height: auto; 
+}
+svg:hover{
+    transform:scale(1.1)
+}
+h1{
+    font-size: 100px;
+}
+.link{
+    color: red;
+}
+.premium{
+    height: auto;
+    background-color: #47474f;
+    margin-top: 100px;
+}
+.col1{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.col2{
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+}
+#button{
+    background-color: #ffc233;
+    opacity: 0.8;
+}
+#button:hover{
+    opacity: 1;
+    background-color: #efaa0a;
+}
+
